@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Web Nexa</title>
+<meta name="description" content="Simple, honest pricing for websites and software. No hidden fees, no confusing packages.">
+<link rel="icon" href="assets/logo.png">
+<link rel="canonical" href="https://web-nexaa.vercel.app/pricing.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Web Nexa">
+<meta property="og:title" content="Pricing — Web Nexa">
+<meta property="og:description" content="Simple, honest pricing for websites and software. No hidden fees, no confusing packages.">
+<meta property="og:url" content="https://web-nexaa.vercel.app/pricing.html">
+<meta property="og:image" content="https://web-nexaa.vercel.app/assets/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing — Web Nexa">
+<meta name="twitter:description" content="Simple, honest pricing for websites and software. No hidden fees, no confusing packages.">
+<meta name="twitter:image" content="https://web-nexaa.vercel.app/assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  .pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:center; }
+  .price-card{
+    position:relative;
+    background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-card);
+    backdrop-filter:blur(12px); padding:44px 34px; transition:var(--ease);
+    animation:priceCardFloat 6s ease-in-out infinite;
+  }
+  .pricing-grid > *:nth-child(1) .price-card{ animation-delay:0s; }
+  .pricing-grid > *:nth-child(2) .price-card{ animation-delay:0.6s; }
+  .pricing-grid > *:nth-child(3) .price-card{ animation-delay:1.2s; }
+  @keyframes priceCardFloat{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+  }
+  .price-card.featured{ animation:priceCardFloatFeatured 6s ease-in-out infinite 0.6s; }
+  @keyframes priceCardFloatFeatured{
+    0%,100%{ transform:scale(1.05) translateY(0); }
+    50%{ transform:scale(1.05) translateY(-10px); }
+  }
+  .price-card:hover{ border-color:var(--accent-blue); box-shadow:var(--glow-blue); }
+  .price-card.featured{
+    transform:scale(1.05);
+    border:1px solid transparent;
+    background:linear-gradient(rgba(10,15,44,0.9),rgba(10,15,44,0.9)) padding-box,
+               linear-gradient(135deg,var(--accent-blue),var(--accent-violet)) border-box;
+    box-shadow:0 0 40px rgba(123,47,255,0.35);
+    padding-top:56px;
+  }
+  .popular-badge{
+    position:absolute; top:-16px; left:50%; transform:translateX(-50%);
+    background:linear-gradient(90deg,var(--accent-blue),var(--accent-violet));
+    padding:7px 20px; border-radius:50px; font-size:12px; font-weight:800;
+    letter-spacing:0.5px; white-space:nowrap;
+  }
+  .price-card h3{ font-family:var(--font-head); font-weight:800; font-size:24px; margin-bottom:10px; }
+  .price-card .subtitle{ color:var(--text-secondary); font-size:14px; margin-bottom:26px; min-height:42px; }
+  .price-card .price{ font-family:var(--font-head); font-weight:800; font-size:38px; margin-bottom:2px; }
+  .price-card .price-note{ font-size:12.5px; color:var(--text-secondary); margin-bottom:28px; }
+  .price-card ul{ margin-bottom:32px; }
+  .price-card ul li{ display:flex; gap:10px; font-size:14px; color:var(--text-secondary); margin-bottom:12px; }
+  .price-card ul li i{ color:#2ee66b; margin-top:2px; }
+  .price-card .btn{ width:100%; }
+
+  .faq-list{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
+  .faq-item{
+    background:var(--bg-card);
+    border:1px solid var(--border-color);
+    border-radius:14px;
+    padding:20px 26px;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    transition:var(--ease);
+  }
+  .faq-item:hover{ border-color:var(--accent-blue); }
+  .faq-item.open{ border-color:var(--accent-blue); box-shadow:var(--glow-blue); }
+  .faq-question{
+    display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; font-family:var(--font-head); font-weight:700; font-size:16.5px;
+  }
+  .faq-question i{ transition:transform 0.3s ease; color:var(--accent-blue); }
+  .faq-item.open .faq-question i{ transform:rotate(45deg); }
+  .faq-answer{
+    max-height:0; overflow:hidden; transition:max-height 0.4s ease;
+    color:var(--text-secondary); font-size:14.5px;
+  }
+  .faq-item.open .faq-answer{ max-height:220px; margin-top:12px; }
+
+  @media (max-width:960px){
+    .pricing-grid{ grid-template-columns:1fr; }
+    .price-card.featured{ transform:scale(1); animation:none; }
+    .price-card{ animation:none; }
+  }
+</style>
+</head>
+<body>
+<div class="loading-screen" id="loadingScreen">
+  <div class="loader-mark">
+    <div class="loader-logo">WEB NEXA</div>
+    <div class="loader-bar"></div>
+  </div>
+</div>
+<div class="aurora-bg">
+  <div class="aurora-blob a1"></div>
+  <div class="aurora-blob a2"></div>
+  <div class="aurora-blob a3"></div>
+</div>
+<canvas id="scrollSequenceCanvas" class="scroll-sequence-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<div class="page-shell">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Web Nexa"> Web Nexa</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html" class="active" aria-current="page">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline">Start Your Project</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-overlay">
+  <button class="mobile-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+</div>
+
+<!-- PRICING HERO -->
+<section class="page-hero" id="main">
+  <div class="hero-bg-orb"></div>
+  <div class="container">
+    <h1>Simple Pricing. <span class="gradient-text">Real Value.</span></h1>
+    <p>No hidden fees. No confusing packages. Just clear, honest pricing for every type of business.</p>
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section style="padding-top:20px;">
+  <div class="container">
+    <div class="pricing-grid">
+
+      <div class="price-card reveal">
+        <h3>QuickSite</h3>
+        <p class="subtitle">Perfect for small businesses needing a fast, professional online footprint.</p>
+        <div class="price">₹6,500</div>
+        <div class="price-note">One-time fixed payment</div>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i>Custom Single Page Website</li>
+          <li><i class="fa-solid fa-circle-check"></i>Clean, Modern UI</li>
+          <li><i class="fa-solid fa-circle-check"></i>100% Mobile Responsive</li>
+          <li><i class="fa-solid fa-circle-check"></i>Contact Form Integration</li>
+          <li><i class="fa-solid fa-circle-check"></i>Fast Loading Speed</li>
+          <li><i class="fa-solid fa-circle-check"></i>Advanced Animations</li>
+          <li><i class="fa-solid fa-circle-check"></i>Multi-page Architecture</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline">Select Plan</a>
+      </div>
+
+      <div class="price-card featured reveal">
+        <span class="popular-badge">⭐ Most Popular</span>
+        <h3>BizSite Package</h3>
+        <p class="subtitle">The ultimate business website with premium features to dominate your market.</p>
+        <div class="price">₹12,000 – ₹25,000</div>
+        <div class="price-note">Based on your requirements</div>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i>Up to 5 Custom Pages</li>
+          <li><i class="fa-solid fa-circle-check"></i>Premium Custom Design</li>
+          <li><i class="fa-solid fa-circle-check"></i>Advanced Scroll Animations</li>
+          <li><i class="fa-solid fa-circle-check"></i>SEO Optimized Structure</li>
+          <li><i class="fa-solid fa-circle-check"></i>Google Business Integration</li>
+          <li><i class="fa-solid fa-circle-check"></i>Performance Optimization</li>
+          <li><i class="fa-solid fa-circle-check"></i>1 Month Free Support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Select Plan</a>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Site Makeover</h3>
+        <p class="subtitle">Revitalize your old, outdated website to boost modern appeal and conversions.</p>
+        <div class="price">₹4,000 – ₹10,000</div>
+        <div class="price-note">Based on scope of work</div>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i>Complete Visual Redesign</li>
+          <li><i class="fa-solid fa-circle-check"></i>Fix Broken Layouts &amp; Links</li>
+          <li><i class="fa-solid fa-circle-check"></i>Mobile Responsiveness Fix</li>
+          <li><i class="fa-solid fa-circle-check"></i>Speed &amp; Code Cleanup</li>
+          <li><i class="fa-solid fa-circle-check"></i>Modern Typography Update</li>
+          <li><i class="fa-solid fa-circle-check"></i>Improved User Experience</li>
+          <li><i class="fa-solid fa-circle-check"></i>New Content Creation</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline">Select Plan</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--bg-secondary)">
+  <div class="container">
+    <h2 class="section-heading reveal">Common Questions About Pricing</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-question">Are these prices fixed? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">QuickSite is a fixed price of ₹6,500. BizSite and Site Makeover are range-based because every business has different needs — your final quote is always confirmed and agreed upon before any work begins.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Are there any hidden charges? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">None. What we quote is exactly what you pay. No registration fees, no maintenance fees, no surprise invoices.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What does the 1 month free support include? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Any bug fixes, minor content updates, or small changes within 30 days of delivery — at zero extra cost.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I pay? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">We accept UPI, bank transfer, and Razorpay. A 50% advance is required to begin work, and the remaining 50% is paid upon delivery before the site goes live.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I upgrade my plan later? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Yes. If you start with QuickSite and later want to expand to a multi-page BizSite, we can upgrade your existing project at any time.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What if I need something not listed here? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Just reach out. We handle custom requirements and will give you a tailored quote based on exactly what you need.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-banner">
+  <div class="hero-bg-orb"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <h2 class="reveal" style="font-size:40px;">Still Not Sure Which Plan Fits You?</h2>
+    <p class="reveal">Message Anmol directly — he'll personally help you choose the right plan for your business and budget. No pressure. Just honest advice.</p>
+    <a href="contact.html" class="btn btn-primary reveal">Get a Free Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Web Nexa"> Web Nexa</a>
+        <p>Building digital futures for startups and local businesses — fast, beautiful, and within budget.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Business Websites</a></li>
+          <li><a href="services.html">Startup Web Apps</a></li>
+          <li><a href="services.html">E-Commerce Stores</a></li>
+          <li><a href="services.html">Landing Pages</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Site Makeover</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918808279122">📱 +91 8808279122</a></li>
+          <li><a href="mailto:anmolmishra9850@gmail.com">📧 anmolmishra9850@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Web Nexa · Founded by Anmol Mishra · Greater Noida, India · All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+</div><!-- /.page-shell -->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/scrollSequence.min.js"></script>
+<script src="js/script.min.js"></script>
+</body>
+</html>

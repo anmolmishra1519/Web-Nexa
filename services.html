@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Web Nexa</title>
+<meta name="description" content="Business websites, startup web apps, e-commerce stores, landing pages, custom software and redesigns — delivered in 6-7 days.">
+<link rel="icon" href="assets/logo.png">
+<link rel="canonical" href="https://web-nexaa.vercel.app/services.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Web Nexa">
+<meta property="og:title" content="Services — Web Nexa">
+<meta property="og:description" content="Business websites, startup web apps, e-commerce stores, landing pages, custom software and redesigns — delivered in 6-7 days.">
+<meta property="og:url" content="https://web-nexaa.vercel.app/services.html">
+<meta property="og:image" content="https://web-nexaa.vercel.app/assets/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services — Web Nexa">
+<meta name="twitter:description" content="Business websites, startup web apps, e-commerce stores, landing pages, custom software and redesigns — delivered in 6-7 days.">
+<meta name="twitter:image" content="https://web-nexaa.vercel.app/assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  .service-block{
+    display:grid;
+    grid-template-columns:0.5fr 1fr;
+    gap:36px;
+    align-items:start;
+    padding:32px 36px;
+    margin-bottom:18px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(0,170,255,0.22);
+    border-radius:var(--radius-card);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    box-shadow:0 8px 30px rgba(0,0,0,0.35);
+    transition:var(--ease);
+  }
+  .service-block:last-of-type{ margin-bottom:0; }
+  .service-block:hover{
+    background:rgba(255,255,255,0.09);
+    border-color:var(--accent-blue);
+    box-shadow:var(--glow-blue);
+    transform:translateY(-4px);
+  }
+  .service-icon-wrap{
+    width:72px;height:72px;border-radius:18px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(0,170,255,0.08); border:1px solid var(--border-color);
+    font-size:30px;
+    position:sticky; top:120px;
+  }
+  .service-content h3{ font-family:var(--font-head); font-weight:800; font-size:28px; margin-bottom:16px; }
+  .service-content p.desc{ color:var(--text-secondary); font-size:15.5px; margin-bottom:24px; max-width:680px; }
+  .feature-list{ display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin-bottom:22px; }
+  .feature-list li{ color:var(--text-secondary); font-size:14px; display:flex; gap:8px; align-items:flex-start; }
+  .feature-list li i{ color:var(--accent-blue); margin-top:3px; font-size:12px; }
+  .best-for{ font-size:13.5px; color:var(--text-secondary); }
+  .best-for strong{ color:#fff; }
+  @media (max-width:860px){
+    .service-block{ grid-template-columns:1fr; gap:24px; padding:28px 26px; }
+    .service-icon-wrap{ position:static; }
+    .feature-list{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="loading-screen" id="loadingScreen">
+  <div class="loader-mark">
+    <div class="loader-logo">WEB NEXA</div>
+    <div class="loader-bar"></div>
+  </div>
+</div>
+<div class="aurora-bg">
+  <div class="aurora-blob a1"></div>
+  <div class="aurora-blob a2"></div>
+  <div class="aurora-blob a3"></div>
+</div>
+<canvas id="scrollSequenceCanvas" class="scroll-sequence-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<div class="page-shell">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Web Nexa"> Web Nexa</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active" aria-current="page">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline">Start Your Project</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-overlay">
+  <button class="mobile-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+</div>
+
+<!-- SERVICES HERO -->
+<section class="page-hero" id="main">
+  <div class="hero-bg-orb"></div>
+  <div class="container">
+    <h1>What Web Nexa <span class="gradient-text">Builds For You</span></h1>
+    <p>Every service below is delivered in 6–7 days, built from scratch, and priced to fit your budget.</p>
+  </div>
+</section>
+
+<!-- SERVICE BLOCKS -->
+<section style="padding-top:20px;">
+  <div class="container">
+
+    <div class="service-block reveal">
+      <div class="service-icon-wrap"><i class="fa-solid fa-globe" style="color:var(--accent-blue)"></i></div>
+      <div class="service-content">
+        <h3>Business Websites</h3>
+        <p class="desc">A professional, beautiful website built specifically for your local business. Whether you run a restaurant, salon, clinic, gym, shop, or any kind of service — we design and develop every page from scratch, customized to reflect your brand, your services, and your customers. No templates. No generic designs. Just a site that looks like yours and works for your customers.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check"></i>Custom Homepage Design</li>
+          <li><i class="fa-solid fa-check"></i>About Page</li>
+          <li><i class="fa-solid fa-check"></i>Services / Menu Page</li>
+          <li><i class="fa-solid fa-check"></i>Gallery or Portfolio Page</li>
+          <li><i class="fa-solid fa-check"></i>Contact Page with Form</li>
+          <li><i class="fa-solid fa-check"></i>Google Maps Embed</li>
+          <li><i class="fa-solid fa-check"></i>100% Mobile Responsive</li>
+          <li><i class="fa-solid fa-check"></i>Fast Loading Speed</li>
+          <li><i class="fa-solid fa-check"></i>Social Media Links Integration</li>
+          <li><i class="fa-solid fa-check"></i>WhatsApp Chat Button</li>
+        </ul>
+        <p class="best-for"><strong>Best for:</strong> Restaurants, salons, clinics, gyms, shops, real estate agents, tutors, photographers</p>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-icon-wrap"><i class="fa-solid fa-rocket" style="color:var(--accent-violet)"></i></div>
+      <div class="service-content">
+        <h3>Startup Web Applications</h3>
+        <p class="desc">Got a startup idea that needs a digital platform? We build custom web applications from scratch — dashboards, portals, booking systems, management tools, SaaS products — whatever your startup needs to operate, grow, and impress investors or early users. We understand startup timelines and budgets, and we build accordingly.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check"></i>User Authentication &amp; Login System</li>
+          <li><i class="fa-solid fa-check"></i>Custom Dashboard UI</li>
+          <li><i class="fa-solid fa-check"></i>Database Architecture &amp; Design</li>
+          <li><i class="fa-solid fa-check"></i>Admin Panel</li>
+          <li><i class="fa-solid fa-check"></i>API Integration</li>
+          <li><i class="fa-solid fa-check"></i>Role-Based Access Control</li>
+          <li><i class="fa-solid fa-check"></i>Mobile Responsive Interface</li>
+          <li><i class="fa-solid fa-check"></i>Scalable &amp; Clean Codebase</li>
+          <li><i class="fa-solid fa-check"></i>Secure Deployment on Vercel / Render</li>
+        </ul>
+        <p class="best-for"><strong>Best for:</strong> Early-stage startups, SaaS ideas, booking platforms, management tools, portals</p>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-icon-wrap"><i class="fa-solid fa-cart-shopping" style="color:var(--accent-blue)"></i></div>
+      <div class="service-content">
+        <h3>E-Commerce Stores</h3>
+        <p class="desc">Sell your products online with a fully functional e-commerce store. We set up everything — product listings, shopping cart, checkout flow, and payment integration — so your customers can browse, add to cart, and pay without any friction. We build stores that look premium and work flawlessly on every device.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check"></i>Custom Product Listing Pages</li>
+          <li><i class="fa-solid fa-check"></i>Shopping Cart &amp; Checkout Flow</li>
+          <li><i class="fa-solid fa-check"></i>Razorpay / PayTM Payment Integration</li>
+          <li><i class="fa-solid fa-check"></i>Order Management System</li>
+          <li><i class="fa-solid fa-check"></i>Inventory Tracking</li>
+          <li><i class="fa-solid fa-check"></i>Product Search &amp; Filter</li>
+          <li><i class="fa-solid fa-check"></i>Customer Account / Login</li>
+          <li><i class="fa-solid fa-check"></i>Mobile-Friendly Shopping Experience</li>
+          <li><i class="fa-solid fa-check"></i>SEO-Ready Product Pages</li>
+        </ul>
+        <p class="best-for"><strong>Best for:</strong> Clothing brands, food businesses, handmade products, local retailers going online</p>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-icon-wrap"><i class="fa-solid fa-file-lines" style="color:var(--accent-violet)"></i></div>
+      <div class="service-content">
+        <h3>Landing Pages</h3>
+        <p class="desc">Need a single page that drives real results? We build high-converting landing pages for product launches, service promotions, event registrations, or lead capture campaigns. Every element — the headline, the layout, the CTA — is designed specifically to make visitors take action.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check"></i>Compelling Hero Section</li>
+          <li><i class="fa-solid fa-check"></i>Features &amp; Benefits Block</li>
+          <li><i class="fa-solid fa-check"></i>How It Works Section</li>
+          <li><i class="fa-solid fa-check"></i>Strong CTA Integration</li>
+          <li><i class="fa-solid fa-check"></i>Lead Capture / Inquiry Form</li>
+          <li><i class="fa-solid fa-check"></i>Testimonials Block</li>
+          <li><i class="fa-solid fa-check"></i>Trust Badges</li>
+          <li><i class="fa-solid fa-check"></i>Fast Load Speed</li>
+          <li><i class="fa-solid fa-check"></i>Fully Mobile Optimized</li>
+          <li><i class="fa-solid fa-check"></i>WhatsApp CTA Integration</li>
+        </ul>
+        <p class="best-for"><strong>Best for:</strong> Product launches, service promotions, event pages, app downloads, offer pages</p>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-icon-wrap"><i class="fa-solid fa-microchip" style="color:var(--accent-blue)"></i></div>
+      <div class="service-content">
+        <h3>Custom Software Solutions</h3>
+        <p class="desc">Every business has unique workflows that off-the-shelf software can't handle. We build bespoke software tailored to exactly how your business operates — from billing systems and inventory management to CRM tools, booking platforms, employee management, and beyond. You describe the problem; we build the solution.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check"></i>Requirement Analysis &amp; Planning</li>
+          <li><i class="fa-solid fa-check"></i>Custom UI/UX Design</li>
+          <li><i class="fa-solid fa-check"></i>Full Stack Development</li>
+          <li><i class="fa-solid fa-check"></i>Database Design &amp; Integration</li>
+          <li><i class="fa-solid fa-check"></i>User Role &amp; Permission Management</li>
+          <li><i class="fa-solid fa-check"></i>Report Generation</li>
+          <li><i class="fa-solid fa-check"></i>Data Export (PDF / Excel)</li>
+          <li><i class="fa-solid fa-check"></i>Testing &amp; Quality Assurance</li>
+          <li><i class="fa-solid fa-check"></i>Deployment &amp; Full Handover</li>
+          <li><i class="fa-solid fa-check"></i>Training &amp; Documentation</li>
+        </ul>
+        <p class="best-for"><strong>Best for:</strong> Businesses with specific operational needs not served by generic software</p>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-icon-wrap"><i class="fa-solid fa-rotate" style="color:var(--accent-violet)"></i></div>
+      <div class="service-content">
+        <h3>Website Redesign &amp; Upgrade</h3>
+        <p class="desc">Your old website is costing you customers every single day. A slow, outdated, or broken website destroys trust before you even get a chance to speak. We completely rebuild it — fresh modern design, faster performance, fixed layouts, mobile-friendly, and a better user experience — while keeping everything that matters to your business intact.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-check"></i>Complete Visual Overhaul</li>
+          <li><i class="fa-solid fa-check"></i>Fix All Broken Layouts &amp; Links</li>
+          <li><i class="fa-solid fa-check"></i>Mobile Responsiveness Fix</li>
+          <li><i class="fa-solid fa-check"></i>Speed &amp; Code Cleanup</li>
+          <li><i class="fa-solid fa-check"></i>Modern Typography &amp; Color Update</li>
+          <li><i class="fa-solid fa-check"></i>Improved User Experience &amp; Navigation</li>
+          <li><i class="fa-solid fa-check"></i>Fresh Content Restructuring</li>
+          <li><i class="fa-solid fa-check"></i>SEO Cleanup</li>
+          <li><i class="fa-solid fa-check"></i>Cross-Browser Testing</li>
+          <li><i class="fa-solid fa-check"></i>Deployment of Redesigned Site</li>
+        </ul>
+        <p class="best-for"><strong>Best for:</strong> Businesses with existing websites that are slow, outdated, broken, or not mobile-friendly</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-banner" style="background:var(--bg-secondary)">
+  <div class="hero-bg-orb"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <h2 class="reveal" style="font-size:40px;">Not Sure Which Service You Need?</h2>
+    <p class="reveal">Just reach out. Anmol will personally guide you to the right solution for your business and budget — no pressure, no sales pitch.</p>
+    <a href="contact.html" class="btn btn-primary reveal">Talk to Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Web Nexa"> Web Nexa</a>
+        <p>Building digital futures for startups and local businesses — fast, beautiful, and within budget.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Business Websites</a></li>
+          <li><a href="services.html">Startup Web Apps</a></li>
+          <li><a href="services.html">E-Commerce Stores</a></li>
+          <li><a href="services.html">Landing Pages</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Site Makeover</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918808279122">📱 +91 8808279122</a></li>
+          <li><a href="mailto:anmolmishra9850@gmail.com">📧 anmolmishra9850@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Web Nexa · Founded by Anmol Mishra · Greater Noida, India · All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+</div><!-- /.page-shell -->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/scrollSequence.min.js"></script>
+<script src="js/script.min.js"></script>
+</body>
+</html>

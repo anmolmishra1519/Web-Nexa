@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Web Nexa</title>
+<meta name="description" content="Reach out directly to Anmol Mishra via call, WhatsApp, or email. No forms, no bots.">
+<link rel="icon" href="assets/logo.png">
+<link rel="canonical" href="https://web-nexaa.vercel.app/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Web Nexa">
+<meta property="og:title" content="Contact — Web Nexa">
+<meta property="og:description" content="Reach out directly to Anmol Mishra via call, WhatsApp, or email. No forms, no bots.">
+<meta property="og:url" content="https://web-nexaa.vercel.app/contact.html">
+<meta property="og:image" content="https://web-nexaa.vercel.app/assets/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Web Nexa">
+<meta name="twitter:description" content="Reach out directly to Anmol Mishra via call, WhatsApp, or email. No forms, no bots.">
+<meta name="twitter:image" content="https://web-nexaa.vercel.app/assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  .contact-card{
+    max-width:720px; margin:0 auto;
+    background:var(--bg-card); border:1px solid var(--border-color); border-radius:24px;
+    padding:56px 48px; backdrop-filter:blur(12px);
+  }
+  .contact-card .top-label{ text-align:center; }
+  .contact-card h2{ font-family:var(--font-head); font-weight:800; font-size:30px; text-align:center; margin-bottom:14px; }
+  .contact-card > p.sub{ color:var(--text-secondary); text-align:center; max-width:520px; margin:0 auto 44px; font-size:15px; }
+
+  .contact-method{ display:flex; gap:22px; align-items:flex-start; padding:20px 0; }
+  .contact-method .icon{
+    width:54px; height:54px; border-radius:14px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:22px;
+    background:rgba(0,170,255,0.1); border:1px solid var(--border-color);
+  }
+  .contact-method .label{ font-size:13px; color:var(--text-secondary); text-transform:uppercase; letter-spacing:1px; font-weight:700; margin-bottom:4px; }
+  .contact-method .value{ font-family:var(--font-head); font-weight:700; font-size:19px; margin-bottom:4px; }
+  .contact-method .sub-label{ font-size:13px; color:var(--text-secondary); margin-bottom:16px; }
+  .contact-method .method-buttons{ display:flex; gap:12px; flex-wrap:wrap; }
+  .contact-method .method-buttons .btn{ padding:11px 22px; font-size:13.5px; }
+
+  .divider-line{ height:1px; background:linear-gradient(90deg,transparent,var(--border-color),transparent); margin:8px 0; }
+
+  .promise-strip{
+    display:flex; justify-content:center; gap:60px; flex-wrap:wrap;
+    background:var(--bg-secondary); padding:44px 24px; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);
+  }
+  .promise-item{
+    text-align:center; max-width:220px;
+    background:var(--bg-card);
+    border:1px solid var(--border-color);
+    border-radius:14px;
+    padding:22px 20px;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    transition:var(--ease);
+  }
+  .promise-item:hover{ border-color:var(--accent-blue); box-shadow:var(--glow-blue); }
+  .promise-item .emoji{ font-size:26px; margin-bottom:10px; }
+  .promise-item h4{ font-family:var(--font-head); font-size:15px; margin-bottom:6px; }
+  .promise-item p{ font-size:13px; color:var(--text-secondary); }
+
+  @media (max-width:640px){
+    .contact-card{ padding:38px 24px; }
+    .contact-method{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+<div class="loading-screen" id="loadingScreen">
+  <div class="loader-mark">
+    <div class="loader-logo">WEB NEXA</div>
+    <div class="loader-bar"></div>
+  </div>
+</div>
+<div class="aurora-bg">
+  <div class="aurora-blob a1"></div>
+  <div class="aurora-blob a2"></div>
+  <div class="aurora-blob a3"></div>
+</div>
+<canvas id="scrollSequenceCanvas" class="scroll-sequence-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<div class="page-shell">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Web Nexa"> Web Nexa</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="active" aria-current="page">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline">Start Your Project</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-overlay">
+  <button class="mobile-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+</div>
+
+<!-- CONTACT HERO -->
+<section class="page-hero" id="main">
+  <div class="hero-bg-orb"></div>
+  <div class="container">
+    <h1>Let's Build Something <span class="gradient-text">Together</span></h1>
+    <p>Reach out directly — no forms, no bots. Just a real conversation with Anmol.</p>
+  </div>
+</section>
+
+<!-- CONTACT CARD -->
+<section style="padding-top:20px;">
+  <div class="container">
+    <div class="contact-card reveal">
+      <span class="eyebrow top-label">Get In Touch</span>
+      <h2>We're Just One Message Away</h2>
+      <p class="sub">Have a project in mind? Want to know which plan suits your business? Reach out directly — Anmol personally responds to every message within 24 hours.</p>
+
+      <div class="contact-method">
+        <div class="icon"><i class="fa-solid fa-phone" style="color:var(--accent-blue)"></i></div>
+        <div>
+          <div class="label">Call or WhatsApp</div>
+          <div class="value">+91 8808279122</div>
+          <div class="sub-label">Available Monday to Saturday, 9 AM to 8 PM</div>
+          <div class="method-buttons">
+            <a href="tel:+918808279122" class="btn btn-outline">📞 Call Now</a>
+            <a href="https://wa.me/918808279122?text=Hi%2C%20I%27m%20here%20for%20website%2Fsoftware%20development." target="_blank" rel="noopener" class="btn btn-primary">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-line"></div>
+
+      <div class="contact-method">
+        <div class="icon"><i class="fa-solid fa-envelope" style="color:var(--accent-violet)"></i></div>
+        <div>
+          <div class="label">Send an Email</div>
+          <div class="value">anmolmishra9850@gmail.com</div>
+          <div class="sub-label">We reply to every email within 24 hours</div>
+          <div class="method-buttons">
+            <a href="mailto:anmolmishra9850@gmail.com" class="btn btn-outline">Send Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESPONSE PROMISE STRIP -->
+<div class="promise-strip">
+  <div class="promise-item reveal">
+    <div class="emoji">⚡</div>
+    <h4>Fast Reply</h4>
+    <p>Within 24 hours, always</p>
+  </div>
+  <div class="promise-item reveal">
+    <div class="emoji">🎯</div>
+    <h4>Free Consultation</h4>
+    <p>We'll guide you to the right plan</p>
+  </div>
+  <div class="promise-item reveal">
+    <div class="emoji">💰</div>
+    <h4>No Obligation</h4>
+    <p>Just a conversation, no pressure</p>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="cta-banner">
+  <div class="hero-bg-orb"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <h2 class="reveal" style="font-size:40px;">Not Ready to Reach Out Yet?</h2>
+    <p class="reveal">Browse our services or check our pricing — and come back when you're ready. We'll be here.</p>
+    <div class="reveal" style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap;">
+      <a href="services.html" class="btn btn-ghost">View Services</a>
+      <a href="pricing.html" class="btn btn-primary">See Pricing</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Web Nexa"> Web Nexa</a>
+        <p>Building digital futures for startups and local businesses — fast, beautiful, and within budget.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Business Websites</a></li>
+          <li><a href="services.html">Startup Web Apps</a></li>
+          <li><a href="services.html">E-Commerce Stores</a></li>
+          <li><a href="services.html">Landing Pages</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Site Makeover</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918808279122">📱 +91 8808279122</a></li>
+          <li><a href="mailto:anmolmishra9850@gmail.com">📧 anmolmishra9850@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Web Nexa · Founded by Anmol Mishra · Greater Noida, India · All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+</div><!-- /.page-shell -->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/scrollSequence.min.js"></script>
+<script src="js/script.min.js"></script>
+</body>
+</html>
