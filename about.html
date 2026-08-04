@@ -26,17 +26,19 @@
   .story-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center; }
   .founder-visual{
     position:relative;
-    aspect-ratio:1/1;
+    width:clamp(240px, 62vw, 420px);
+    height:clamp(240px, 62vw, 420px);
     border-radius:24px;
     background:var(--bg-card);
     border:1px solid var(--border-color);
     backdrop-filter:blur(12px);
     display:flex; align-items:center; justify-content:center;
     overflow:visible;
+    margin:0 auto;
   }
   .founder-visual .founder-photo{
     width:62%;
-    aspect-ratio:1/1;
+    height:62%;
     border-radius:50%;
     object-fit:cover;
     object-position:top center;
@@ -123,7 +125,6 @@
     .founder-card{ padding:28px 20px; }
     .founder-card h3{ font-size:21px; }
     .founder-avatar{ width:76px; height:76px; }
-    .founder-visual{ max-width:280px; margin:0 auto; }
     .tech-panel{ padding:22px 20px; }
     .tech-badge{ padding:8px 14px; font-size:12.5px; }
   }
