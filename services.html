@@ -30,8 +30,8 @@
     align-items:start;
     padding:32px 36px;
     margin-bottom:18px;
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(0,170,255,0.22);
+    background:rgba(15,20,40,0.035);
+    border:1px solid rgba(47,93,255,0.22);
     border-radius:var(--radius-card);
     backdrop-filter:blur(16px);
     -webkit-backdrop-filter:blur(16px);
@@ -40,7 +40,7 @@
   }
   .service-block:last-of-type{ margin-bottom:0; }
   .service-block:hover{
-    background:rgba(255,255,255,0.09);
+    background:rgba(15,20,40,0.06);
     border-color:var(--accent-blue);
     box-shadow:var(--glow-blue);
     transform:translateY(-4px);
@@ -48,7 +48,7 @@
   .service-icon-wrap{
     width:72px;height:72px;border-radius:18px;
     display:flex;align-items:center;justify-content:center;
-    background:rgba(0,170,255,0.08); border:1px solid var(--border-color);
+    background:rgba(47,93,255,0.08); border:1px solid var(--border-color);
     font-size:30px;
     position:sticky; top:120px;
   }
@@ -58,7 +58,7 @@
   .feature-list li{ color:var(--text-secondary); font-size:14px; display:flex; gap:8px; align-items:flex-start; }
   .feature-list li i{ color:var(--accent-blue); margin-top:3px; font-size:12px; }
   .best-for{ font-size:13.5px; color:var(--text-secondary); }
-  .best-for strong{ color:#fff; }
+  .best-for strong{ color:var(--text-primary); }
   @media (max-width:860px){
     .service-block{ grid-template-columns:1fr; gap:24px; padding:28px 26px; }
     .service-icon-wrap{ position:static; }
@@ -83,7 +83,6 @@
   <div class="aurora-blob a2"></div>
   <div class="aurora-blob a3"></div>
 </div>
-<canvas id="scrollSequenceCanvas" class="scroll-sequence-canvas"></canvas>
 <div class="noise-overlay"></div>
 
 <div class="page-shell">
@@ -312,7 +311,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="js/scrollSequence.min.js"></script>
 <script src="js/script.min.js"></script>
 </body>
 </html>
